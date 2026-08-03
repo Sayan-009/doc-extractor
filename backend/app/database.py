@@ -12,7 +12,7 @@ elif not db_url.startswith("postgresql+asyncpg://"):
     # Already has the right prefix or is sqlite
     pass
 
-engine = create_async_engine(db_url, echo=False, prepared_statement_cache_size=0)
+engine = create_async_engine(db_url, echo=False, connect_args={"prepared_statement_cache_size": 0})
 AsyncSessionLocal = sessionmaker(
     engine, class_=AsyncSession, expire_on_commit=False
 )
