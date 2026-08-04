@@ -9,8 +9,8 @@ const SessionDetail = ({ session, onProcess, onDownload, onDelete, onEdit }) => 
     <Card className="mb-6">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
-          <div className="flex items-center gap-3 mb-1">
-            <h2 className="text-2xl font-bold text-gray-900">{session.name}</h2>
+          <div className="flex flex-wrap items-center gap-3 mb-1">
+            <h2 className="text-2xl font-bold text-gray-900 break-words">{session.name}</h2>
             <Badge variant={session.status === 'active' ? 'success' : 'neutral'} dot>
               {session.status}
             </Badge>

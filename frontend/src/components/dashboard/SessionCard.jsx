@@ -15,8 +15,8 @@ const SessionCard = ({ session, onProcess, onEdit }) => {
       transition={{ duration: 0.2 }}
     >
       <Card hover className="h-full flex flex-col">
-        <div className="flex justify-between items-start mb-4">
-          <div>
+        <div className="flex justify-between items-start mb-4 gap-2">
+          <div className="min-w-0 flex-1">
             <h3 className="text-lg font-semibold text-gray-900 truncate" title={session.name}>
               {session.name}
             </h3>
