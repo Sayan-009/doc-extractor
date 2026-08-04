@@ -24,7 +24,9 @@ class User(Base):
     def verify_password(self, plain_password: str) -> bool:
         if not self.password_hash:
             return False
-        return pwd_context.verify(plain_password, self.password_hash)
+        # Truncate to 71 chars to prevent bcrypt 72-byte limit errors
+        return pwd_context.verify(plain_password[:71], self.password_hash)
 
     def hash_password(self, plain_password: str):
-        self.password_hash = pwd_context.hash(plain_password)
+        # Truncate to 71 chars to prevent bcrypt 72-byte limit errors
+        self.password_hash = pwd_context.hash(plain_password[:71])
