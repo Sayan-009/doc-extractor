@@ -19,6 +19,6 @@ pydantic-settings
 email-validator
 groq
 aiosqlite
-bcrypt
+bcrypt<4.0.0
 cryptography
 greenlet
